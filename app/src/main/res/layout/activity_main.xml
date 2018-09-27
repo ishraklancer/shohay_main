@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_centerInParent="true"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@id/progress"
+        android:text="SH"
+        android:textSize="60sp"
+        android:textColor="@color/colormain"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@id/progress"
+        android:text="HAY"
+        android:textColor="@color/colormain"
+        android:textSize="60sp"
+        android:textStyle="bold|italic" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/progress"
+        android:src="@drawable/logo_napit"
+        android:id="@+id/napit"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo_dhupi"
+        android:layout_centerVertical="true"
+        android:layout_above="@id/progress"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_above="@id/progress"
+        android:src="@drawable/logo_moyla" />
+
+    <ImageView
+        android:id="@+id/tick"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:src="@drawable/icon_tick"
+        android:visibility="invisible" />
+
+
+
+</RelativeLayout>
