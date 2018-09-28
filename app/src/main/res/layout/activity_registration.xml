@@ -19,7 +19,7 @@
             android:layout_marginTop="8dp">
 
             <EditText
-                android:id="@+id/input_name"
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Name"
@@ -35,7 +35,7 @@
             android:layout_marginTop="8dp">
 
             <EditText
-                android:id="@+id/input_email"
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email(Optional): "
@@ -50,6 +50,7 @@
             android:layout_marginTop="8dp">
 
             <RadioGroup
+                android:id="@+id/gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -57,12 +58,14 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/male"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="male" />
 
                 <RadioButton
+                    android:id="@+id/female"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -87,6 +90,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/day"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Day" />
@@ -102,6 +106,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/month"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -117,23 +122,80 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/year"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="Year" />
             </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/house"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="House No." />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/road"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Road No." />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/district"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="District" />
+            </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>
 
 
         <android.support.design.widget.TextInputLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp">
 
             <CheckBox
+                android:id="@+id/serv_pro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -142,6 +204,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/moila"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -159,6 +222,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/moila_r"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -175,6 +239,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/clean"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -192,6 +257,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/clean_r"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -200,7 +266,7 @@
             android:visibility="gone">
 
             <EditText
-                android:id="@+id/laundry"
+                android:id="@+id/laundry_rate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Your Rate"
@@ -209,6 +275,7 @@
 
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/barber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -226,6 +293,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/barber_r"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -234,7 +302,7 @@
             android:visibility="gone">
 
             <EditText
-                android:id="@+id/napit"
+                android:id="@+id/napit_rate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Your Rate"
@@ -244,7 +312,7 @@
 
         <!-- Signup Button -->
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_signup"
+            android:id="@+id/signup"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"

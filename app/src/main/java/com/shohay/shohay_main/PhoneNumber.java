@@ -2,29 +2,37 @@ package com.shohay.shohay_main;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.firebase.auth.PhoneAuthProvider;
+
+import java.util.concurrent.TimeUnit;
 
 public class PhoneNumber extends AppCompatActivity {
 
     EditText editText;
     TextView next;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("ss", "start");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_number);
 
+        preferences = this.getApplicationContext().getSharedPreferences("phonenumber", MODE_PRIVATE);
+        editor = preferences.edit();
+
         editText = findViewById(R.id.phone_number);
         next = findViewById(R.id.next);
-
-        preferences = this.getApplicationContext().getSharedPreferences("phonenumer", MODE_PRIVATE);
-        editor = preferences.edit();
 
 
         final TextWatcher mTextEditorWatcher = new TextWatcher() {
@@ -49,14 +57,17 @@ public class PhoneNumber extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), NavigationHome.class);
+                String phoneNumber = editText.toString().trim();
+                Intent intent = new Intent(PhoneNumber.this, Registration.class);
                 editor.putString("phonenumber", editText.getText().toString());
                 editor.commit();
+
+
                 startActivity(intent);
             }
         });
     }
 
-    private SharedPreferences preferences;
+    SharedPreferences preferences;
     SharedPreferences.Editor editor;
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -52,9 +53,11 @@ public class LanguageSelect extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PhoneNumber.class);
+                Intent intent = new Intent(LanguageSelect.this, PhoneNumber.class);
                 editor.putString("lang", lang);
                 editor.commit();
+                Log.d("ss", "lang");
+
                 startActivity(intent);
             }
         });
