@@ -25,7 +25,11 @@
             android:name=".NavigationHome"
             android:label="@string/title_activity_navigation_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".PhoneNumber"
+        <activity
+            android:name=".PhoneNumber"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Registration"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 

@@ -5,6 +5,23 @@
     <color name="colorAccent">#26d5b2</color>
     <color name="colormain">#009587</color>
     <color name="colormainDark">#1c7067</color>
+    <color name="regback">#2d7fa3</color>
 
     <color name="black_overlay">#66000000</color>
+
+
+    <color name="primary">#d61b69</color>
+    <color name="primary_dark">#c20b82</color>
+    <color name="primary_darker">#388c7a</color>
+    <color name="accent">#FFFFFF</color>
+
+    <color name="black">#000000</color>
+    <color name="jet">#222222</color>
+    <color name="oil">#333333</color>
+    <color name="monsoon">#777777</color>
+    <color name="jumbo">#888888</color>
+    <color name="aluminum">#999999</color>
+    <color name="base">#AAAAAA</color>
+    <color name="iron">#CCCCCC</color>
+    <color name="white">#FFFFFF</color>
 </resources>
