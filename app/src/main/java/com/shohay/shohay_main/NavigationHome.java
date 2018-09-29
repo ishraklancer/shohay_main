@@ -1,8 +1,10 @@
 package com.shohay.shohay_main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +17,8 @@ import android.view.MenuItem;
 
 public class NavigationHome extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,12 @@ public class NavigationHome extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.main_container, new HomeFragment());
+        fragmentTransaction.commit();
+
     }
 
     @Override
@@ -80,21 +90,44 @@ public class NavigationHome extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_serv) {
+        if (id == R.id.nav_dhupi) {
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container, new DhupiFragment());
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("Dhupi");
+        } else if (id == R.id.nav_history) {
 
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container, new HistoryFragment());
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("History");
+
+        } else if (id == R.id.nav_home) {
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container, new HomeFragment());
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("Home");
+
+        } else if (id == R.id.nav_napit) {
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container, new NapitFragment());
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("Napit");
+
+        } else if (id == R.id.nav_moylaman) {
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container, new DirtyFragment());
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("MoylaMan");
+
+        } else if (id == R.id.nav_orders) {
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container, new OrderFragment());
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("Pending Orders");
+        } else if (id == R.id.nav_logout) {
+            startActivity(new Intent(NavigationHome.this, MainActivity.class));
         }
-            // Handle the camera action
-//        } else if (id == R.id.nav_gallery) {
-//
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
