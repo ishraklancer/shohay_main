@@ -63,6 +63,12 @@ public class LanguageSelect extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(LanguageSelect.this, MainActivity.class));
+    }
+
     private String lang = "";
 
 }

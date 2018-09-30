@@ -38,7 +38,6 @@
         <activity
             android:name=".Registration"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".mapactivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -51,16 +50,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity android:name=".history" />
-        <activity android:name=".notifications" />
-        <activity android:name=".Orders" />
-        <activity android:name=".Settings" />
-        <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
     </application>
 
 </manifest>
