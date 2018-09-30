@@ -113,7 +113,11 @@ public class NavigationHome extends AppCompatActivity
             fragmentTransaction.replace(R.id.main_container, new NapitFragment());
             fragmentTransaction.commit();
             getSupportActionBar().setTitle("Napit");
-
+        } else if (id == R.id.nav_notifications) {
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.main_container, new NotificationFragment());
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("Notifications");
         } else if (id == R.id.nav_moylaman) {
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container, new DirtyFragment());
@@ -127,6 +131,10 @@ public class NavigationHome extends AppCompatActivity
             getSupportActionBar().setTitle("Pending Orders");
         } else if (id == R.id.nav_logout) {
             startActivity(new Intent(NavigationHome.this, MainActivity.class));
+        } else if (id == R.id.nav_settings) {
+            startActivity(new Intent(NavigationHome.this, SettingsActivity.class));
+        } else if (id == R.id.nav_profile) {
+            startActivity(new Intent(NavigationHome.this, Profile.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

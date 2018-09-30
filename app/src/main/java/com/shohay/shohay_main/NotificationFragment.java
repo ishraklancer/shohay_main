@@ -7,16 +7,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DhupiFragment extends Fragment {
+public class NotificationFragment extends Fragment {
 
 
-    public DhupiFragment() {
+    public NotificationFragment() {
         // Required empty public constructor
+
     }
 
 
@@ -27,7 +29,9 @@ public class DhupiFragment extends Fragment {
         //hides action title bar
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dhupi, container, false);
+        return inflater.inflate(R.layout.fragment_notification, container, false);
+
+
     }
 
 }

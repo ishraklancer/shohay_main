@@ -41,6 +41,16 @@
             android:textColor="@color/colormainDark" />
     </RadioGroup>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radioGroup"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/colormain"
+        android:textColor="@color/colorWhite"
+        android:text="//Bypass"
+        android:id="@+id/bypassBtn" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
