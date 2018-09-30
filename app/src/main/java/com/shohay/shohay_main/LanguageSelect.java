@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ public class LanguageSelect extends AppCompatActivity {
     RadioButton english, bangla;
     RadioGroup group;
     TextView next;
+    Button bypass;
 
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
@@ -28,6 +30,7 @@ public class LanguageSelect extends AppCompatActivity {
         bangla = findViewById(R.id.radio_bangla);
         group = findViewById(R.id.radioGroup);
         next = findViewById(R.id.next);
+        bypass = findViewById(R.id.bypassBtn);
 
         preferences = this.getApplicationContext().getSharedPreferences("language", MODE_PRIVATE);
         editor = preferences.edit();
@@ -59,6 +62,13 @@ public class LanguageSelect extends AppCompatActivity {
                 Log.d("ss", "lang");
 
                 startActivity(intent);
+            }
+        });
+
+        bypass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LanguageSelect.this, NavigationHome.class));
             }
         });
     }
