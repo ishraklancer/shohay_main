@@ -8,24 +8,20 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/icon_home"
             android:title="Home" />
-        <item
-            android:title="Services"
-            android:id="@+id/nav_serv">
-            <menu>
-                <item
-                    android:id="@+id/nav_moylaman"
-                    android:icon="@drawable/logo_moyla"
-                    android:title="Moyla-man" />
-                <item
-                    android:id="@+id/nav_napit"
-                    android:icon="@drawable/logo_napit"
-                    android:title="Mr. Napit" />
-                <item
-                    android:id="@+id/nav_dhupi"
-                    android:icon="@drawable/logo_dhupi"
-                    android:title="Dhopa" />
-            </menu>
-        </item>
+        <menu>
+            <item
+                android:id="@+id/nav_moylaman"
+                android:icon="@drawable/logo_moyla"
+                android:title="Moyla-man" />
+            <item
+                android:id="@+id/nav_napit"
+                android:icon="@drawable/logo_napit"
+                android:title="Mr. Napit" />
+            <item
+                android:id="@+id/nav_dhupi"
+                android:icon="@drawable/logo_dhupi"
+                android:title="Dhopa" />
+        </menu>
         <item
             android:id="@+id/nav_history"
             android:icon="@drawable/icon_history"
@@ -40,35 +36,29 @@
             android:title="My Orders" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_feedback"
-                android:icon="@drawable/icon_feedback"
-                android:title="feedback" />
-        </menu>
-    </item>
+    <menu>
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/icon_feedback"
+            android:title="feedback" />
+    </menu>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_settings"
-                android:icon="@drawable/icon_settings"
-                android:title="Settings" />
-            <item
-                android:id="@+id/nav_profile"
-                android:icon="@drawable/icon_profile"
-                android:title="Profile" />
-        </menu>
-    </item>
+    <menu>
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/icon_settings"
+            android:title="Settings" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/icon_profile"
+            android:title="Profile" />
+    </menu>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_logout"
-                android:icon="@drawable/icon_logout"
-                android:title="Logout" />
-        </menu>
-    </item>
+    <menu>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/icon_logout"
+            android:title="Logout" />
+    </menu>
 
 </menu>

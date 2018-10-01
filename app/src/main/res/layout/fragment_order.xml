@@ -14,31 +14,31 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/order_icon"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@drawable/icon_order"
             android:layout_centerHorizontal="false"
-            android:id="@+id/order_icon" />
+            android:layout_gravity="center"
+            android:src="@drawable/icon_order" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_toRightOf="@id/order_icon"
-            android:text="PENDING ORDERS"
             android:gravity="center"
+            android:text="PENDING ORDERS"
+            android:textColor="@color/colormainDark"
             android:textSize="30dp"
-            android:textStyle="bold|italic"
-            android:textColor="@color/colormainDark" />
+            android:textStyle="bold|italic" />
 
 
     </LinearLayout>
 
     <ListView
+        android:id="@+id/pen_orders"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bell_icon"
-        android:id="@+id/listView">
+        android:layout_below="@+id/bell_icon">
 
 
     </ListView>

@@ -31,38 +31,38 @@ public class OrderFragment extends Fragment {
     }
 
     Activity context;
-    napit_adapter adapter;
-    List<User> napits = new ArrayList<>();
+    OrderAdapter adapter;
+    List<Order> ongoing_orders = new ArrayList<>();
 
-    ListView napitss;
+    ListView ongoing_orderss;
     FirebaseDatabase database;
     DatabaseReference reference;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         context = this.getActivity();
-        View thisFragment = inflater.inflate(R.layout.fragment_napit, container, false);
+        View thisFragment = inflater.inflate(R.layout.fragment_order, container, false);
 
-        napitss = thisFragment.findViewById(R.id.napits);
+        ongoing_orderss = thisFragment.findViewById(R.id.pen_orders);
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference("users");
+        reference = database.getReference("Orders");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (napits.size() != 0)
-                    napits.clear();
+                if (ongoing_orders.size() != 0)
+                    ongoing_orders.clear();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    User user = data.getValue(User.class);
-                    if (user.getNapit_rate().matches("0")) {
-                        napits.add(user);
+//                    User user = data.getValue(User.class);
+                    Order order = data.getValue(Order.class);
+                    if (order.getStatus().matches("Pending") || order.getStatus().matches("Ongoing")) {
+                        ongoing_orders.add(order);
                     }
                 }
                 lala();
-                napitss.setAdapter(adapter);
+                ongoing_orderss.setAdapter(adapter);
 
             }
 
@@ -76,7 +76,7 @@ public class OrderFragment extends Fragment {
     }
 
     void lala() {
-        adapter = new napit_adapter(this.getActivity(), napits);
+        adapter = new OrderAdapter(this.getActivity(), ongoing_orders);
     }
 
 }

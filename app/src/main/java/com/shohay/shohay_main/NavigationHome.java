@@ -15,11 +15,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class NavigationHome extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentTransaction fragmentTransaction;
+
+    TextView head_name, head_phone;
+
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,10 @@ public class NavigationHome extends AppCompatActivity
         setContentView(R.layout.activity_navigation_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        preferences = this.getApplicationContext().getSharedPreferences("phonenumber", MODE_PRIVATE);
+
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +54,14 @@ public class NavigationHome extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View lala = navigationView.getHeaderView(0);
+
+        head_name = lala.findViewById(R.id.head_name);
+        head_phone = lala.findViewById(R.id.head_phoneNumber);
+
+        head_phone.setText(preferences.getString("phonenumber", ""));
+        head_name.setText("alauddin");
 
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();

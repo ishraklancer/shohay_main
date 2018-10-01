@@ -3,12 +3,15 @@ package com.shohay.shohay_main;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -52,6 +55,13 @@ public class DhupiFragment extends Fragment {
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("users");
 
+//        dhupiss.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                toaster();
+//            }
+//        });
+
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -79,6 +89,10 @@ public class DhupiFragment extends Fragment {
 
     void lala() {
         adapter = new DhupiAdapter(this.getActivity(), dhupis);
+    }
+
+    void toaster() {
+        Toast.makeText(this.getContext(), "lala", Toast.LENGTH_LONG).show();
     }
 
 }

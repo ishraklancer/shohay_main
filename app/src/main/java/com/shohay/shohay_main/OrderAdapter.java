@@ -14,9 +14,9 @@ import java.util.List;
 
 public class OrderAdapter extends ArrayAdapter {
     private Activity context;
-    private List<User> orderlist;
+    private List<Order> orderlist;
 
-    public OrderAdapter(@NonNull Activity context, List<User> orderlist) {
+    public OrderAdapter(@NonNull Activity context, List<Order> orderlist) {
         super(context, R.layout.order_item, orderlist);
         this.context = context;
         this.orderlist = orderlist;
@@ -34,7 +34,13 @@ public class OrderAdapter extends ArrayAdapter {
         TextView taka = item.findViewById(R.id.order_taka);
         TextView comdate = item.findViewById(R.id.complete_date);
 
-        User user = orderlist.get(position);
+        Order order = orderlist.get(position);
+
+        serv_pro.setText("You Have Taken Service From " + order.getServ_pro());
+        pldate.setText("Order Placed Date: " + order.getOrder_timestamp());
+        comdate.setText("Complete Date: " + order.getDelivery_timestamp());
+        status.setText("Status: " + order.getStatus());
+        taka.setText("Contracted Money: " + order.getPayment());
 
         /// TODO: set item info
 

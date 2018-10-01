@@ -4,10 +4,12 @@ import android.widget.RatingBar;
 
 public class Order {
 
-    private String order_id, rating, type, order_timestamp, payment, status, delivery_timestamp;
+    private String serv_pro, email, order_id, rating, type, order_timestamp, payment, status, delivery_timestamp;
 
-    public Order(String order_id, String rating, String type, String order_timestamp, String payment, String status, String delivery_timestamp) {
+    public Order(String serv_pro, String order_id, String rating, String type, String order_timestamp, String payment, String status, String delivery_timestamp) {
         this.order_id = order_id;
+        this.serv_pro = serv_pro;
+        this.email = email;
         this.rating = rating;
         this.type = type;
         this.order_timestamp = order_timestamp;
@@ -18,6 +20,14 @@ public class Order {
 
     public Order() {
 
+    }
+
+    public String getServ_pro() {
+        return serv_pro;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public String getOrder_id() {
