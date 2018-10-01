@@ -32,7 +32,7 @@
             android:title="History" />
         <item
             android:id="@+id/nav_notifications"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/bell_green"
             android:title="Notifications" />
         <item
             android:id="@+id/nav_orders"

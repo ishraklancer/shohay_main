@@ -2,45 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="10sp"
     android:orientation="vertical">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/dhupi_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="Name: "
+        android:textSize="25dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="You Have Taken Service From"
-            android:textSize="20sp" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/dhupi_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Home Address: "
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/dhupi_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gender: "
+        android:textSize="25dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Date: mm:dd:yyyy"
-        android:textSize="20sp" />
+        android:text="Rating: "
+        android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/complete_date"
+    <RatingBar
+        android:id="@+id/dhupi_rating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Complete Date: mm:dd:yyyy"
-        android:textSize="20sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Status: Pending"
-        android:textSize="20sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Paid Money: 200 Taka"
-        android:textSize="20sp" />
-
+        android:numStars="5" />
 
 </LinearLayout>

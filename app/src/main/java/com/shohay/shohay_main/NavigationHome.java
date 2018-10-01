@@ -1,6 +1,7 @@
 package com.shohay.shohay_main;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -130,7 +131,15 @@ public class NavigationHome extends AppCompatActivity
             fragmentTransaction.commit();
             getSupportActionBar().setTitle("Pending Orders");
         } else if (id == R.id.nav_logout) {
-            startActivity(new Intent(NavigationHome.this, MainActivity.class));
+            SharedPreferences preferences = this.getApplicationContext().getSharedPreferences("language", MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            String lang = preferences.getString("lang", "");
+            if (lang.matches("")) {
+                startActivity(new Intent(NavigationHome.this, LanguageSelect.class));
+            } else {
+                startActivity(new Intent(NavigationHome.this, PhoneNumber.class));
+            }
+
         } else if (id == R.id.nav_settings) {
             startActivity(new Intent(NavigationHome.this, SettingsActivity.class));
         } else if (id == R.id.nav_profile) {
