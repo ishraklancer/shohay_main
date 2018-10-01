@@ -27,14 +27,15 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@color/regback">
+            android:layout_marginTop="10dp">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:editable="false"
                 android:hint="Searching For Your Current Location"
+                android:inputType="none"
                 android:textSize="15sp" />
 
         </android.support.design.widget.TextInputLayout>
@@ -54,7 +55,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:hint="Moila-Man"
                     android:textSize="15sp" />
@@ -69,7 +70,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:hint="Mr. Napit"
                     android:textSize="15sp" />
@@ -80,11 +81,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/monsoon">
+                android:background="@color/colormain">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:hint="Dhupi"
                     android:textSize="15sp" />

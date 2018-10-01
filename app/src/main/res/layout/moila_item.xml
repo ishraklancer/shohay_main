@@ -5,29 +5,31 @@
     android:orientation="vertical"
     android:paddingTop="10sp">
 
+
     <TextView
-        android:id="@+id/dhupi_name"
+        android:id="@+id/moila_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Name: "
         android:textSize="25dp" />
 
     <TextView
-        android:id="@+id/dhupi_add"
+        android:id="@+id/moila_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Home Address: "
         android:textSize="25dp" />
 
     <TextView
-        android:id="@+id/dhupi_gender"
+        android:id="@+id/moila_gender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Gender: "
         android:textSize="25dp" />
 
+
     <TextView
-        android:id="@+id/dhupi_rate"
+        android:id="@+id/moila_rate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Rate: "
@@ -39,11 +41,12 @@
         android:text="Rating: "
         android:textSize="25dp" />
 
-
     <RatingBar
-        android:id="@+id/dhupi_rating"
+        android:id="@+id/moila_rating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clickable="false"
         android:numStars="5" />
 
 </LinearLayout>
+
