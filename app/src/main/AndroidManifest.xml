@@ -60,7 +60,9 @@
         <activity
             android:name=".tester"
             android:label="@string/title_activity_tester" />
-        <activity android:name=".About"></activity>
+        <activity android:name=".About" />
+        <activity android:name=".EasterEgg"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>
