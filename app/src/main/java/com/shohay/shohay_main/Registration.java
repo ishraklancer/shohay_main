@@ -2,6 +2,9 @@ package com.shohay.shohay_main;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.LocationListener;
 import android.preference.PreferenceManager;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -13,8 +16,12 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -23,6 +30,8 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -30,12 +39,15 @@ import butterknife.BindView;
 
 public class Registration extends AppCompatActivity {
 
+
     CheckBox serv;
     TextInputLayout m, mr, c, cr, b, br;
     boolean flag = false;
 
     private RadioGroup radioSexGroup;
     private RadioButton radioSexButton;
+
+    private SearchView searcher;
 
     @BindView(R.id.name)
     EditText name;
@@ -69,6 +81,22 @@ public class Registration extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference myRef;
 
+    List<Address> locations;
+
+
+    void searchLocation() {
+//        Geocoder geocoder = new Geocoder(this);
+//
+//        try {
+//            locations = geocoder.getFromLocationName(searcher.getQuery().toString(), 1);
+//        } catch (IOException e) {
+//
+//        }
+//
+//        Address address = locations.get(0);
+//        LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+//        Toast.makeText(this.getApplicationContext(), address.getCountryName().toString(), Toast.LENGTH_LONG).show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +114,22 @@ public class Registration extends AppCompatActivity {
 
         road = findViewById(R.id.road);
         district = findViewById(R.id.district);
+
+//        searcher = findViewById(R.id.searchloc);
+
+//        searcher.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//
+//            @Override
+//            public boolean onQueryTextSubmit(String s) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String s) {
+//                searchLocation();
+//                return false;
+//            }
+//        });
 
 
         preferences = this.getApplicationContext().getSharedPreferences("phonenumber", MODE_PRIVATE);

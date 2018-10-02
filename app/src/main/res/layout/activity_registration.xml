@@ -188,6 +188,25 @@
         </LinearLayout>
 
 
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<SearchView-->
+        <!--android:id="@+id/searchloc"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:queryHint="Enter Your Location"></SearchView>-->
+
+        <!--<ListView-->
+        <!--android:id="@+id/search_res"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--</ListView>-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
         <android.support.design.widget.TextInputLayout
 
             android:layout_width="match_parent"
