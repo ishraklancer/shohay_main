@@ -59,7 +59,8 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".tester"
-            android:label="@string/title_activity_tester"></activity>
+            android:label="@string/title_activity_tester" />
+        <activity android:name=".About"></activity>
     </application>
 
 </manifest>

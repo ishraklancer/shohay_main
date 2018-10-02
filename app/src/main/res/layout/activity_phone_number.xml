@@ -34,16 +34,36 @@
         android:text="+880"
         android:textSize="30sp" />
 
-    <TextView
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"
-        android:textSize="40sp"
-        android:textColor="@color/colormainDark"
-        android:textStyle="italic"
+        android:text="Get verification Code"
         android:layout_below="@id/phone_number"
+        android:textColor="@color/colorWhite"
+        android:backgroundTint="@color/colormain"
+        android:id="@+id/verifyButton"
         android:layout_centerHorizontal="true"
-        android:visibility="invisible"
-        android:id="@+id/next"/>
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="CODE"
+        android:textSize="25dp"
+        android:layout_below="@id/verifyButton"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/code"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_below="@id/code"
+        android:textColor="@color/colorWhite"
+        android:backgroundTint="@color/colormainDark"
+        android:id="@+id/submitButton"
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>

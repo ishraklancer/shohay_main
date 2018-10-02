@@ -161,6 +161,8 @@ public class NavigationHome extends AppCompatActivity
             startActivity(new Intent(NavigationHome.this, SettingsActivity.class));
         } else if (id == R.id.nav_profile) {
             startActivity(new Intent(NavigationHome.this, Profile.class));
+        } else if (id == R.id.nav_about) {
+            startActivity(new Intent(NavigationHome.this, About.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
