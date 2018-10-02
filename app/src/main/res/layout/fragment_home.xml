@@ -37,7 +37,10 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colormain"
+                android:textStyle="italic"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:editable="false"
                 android:hint="Searching For Your Current Location"
                 android:inputType="none"
@@ -56,28 +59,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/primary">
+                android:background="@color/colormain">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:hint="Moila-Man"
-                    android:textSize="15sp" />
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/monsoon">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:hint="Mr. Napit"
+                    android:gravity="center"
+                    android:hint="Moyla-Man"
+                    android:textColorHint="@color/accent"
+                    android:drawableLeft="@drawable/logo_moyla_small"
                     android:textSize="15sp" />
 
             </android.support.design.widget.TextInputLayout>
@@ -92,7 +83,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
+                    android:gravity="center"
+                    android:hint="Mr. Napit"
+                    android:textColorHint="@color/accent"
+                    android:drawableLeft="@drawable/logo_napit_small"
+                    android:textSize="15sp" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colormain">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:hint="Dhupi"
+                    android:textColorHint="@color/accent"
+                    android:drawableLeft="@drawable/logo_dhupi_small"
                     android:textSize="15sp" />
 
             </android.support.design.widget.TextInputLayout>
@@ -102,8 +115,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colormain"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAllCaps="true"
             android:text="News"
-            android:textSize="25sp" />
+            android:textSize="23sp" />
 
         <ListView
             android:layout_width="match_parent"
