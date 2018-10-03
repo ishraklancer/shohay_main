@@ -42,6 +42,8 @@
         android:textSize="25dp" />
 
     <RatingBar
+        android:max="5"
+        android:focusable="false"
         android:id="@+id/moila_rating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -42,6 +42,8 @@
         android:textSize="25dp" />
 
     <RatingBar
+        android:focusable="false"
+        android:max="5"
         android:id="@+id/napit_rating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

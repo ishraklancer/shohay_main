@@ -162,4 +162,3 @@ public class PhoneNumber extends AppCompatActivity {
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
 }
-
