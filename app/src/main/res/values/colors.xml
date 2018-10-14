@@ -12,6 +12,7 @@
 
 
     <color name="primary">#d61b69</color>
+    <color name="lala">#5c0743</color>
     <color name="primary_dark">#c20b82</color>
     <color name="primary_darker">#388c7a</color>
     <color name="accent">#FFFFFF</color>

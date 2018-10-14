@@ -40,7 +40,7 @@ public class moilaAdapter extends ArrayAdapter {
         gender.setText("Gender:" + user.getGender());
         address.setText("Address: " + user.getAddress());
         rating.setRating(Float.valueOf(user.getRating()));
-        rate.setText("Rate: " + user.getMoila_rate());
+//        rate.setText("Rate: " + user.getMoila_rate());
 
         /// TODO: set item info
 

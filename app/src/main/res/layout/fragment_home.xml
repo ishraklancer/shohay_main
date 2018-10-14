@@ -16,16 +16,17 @@
             android:background="@color/iron">
 
             <TextView
-                android:background="@color/colormain"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
+                android:background="@color/colormain"
                 android:gravity="center"
                 android:text="Shohay"
-                android:textStyle="bold"
+                android:textAlignment="center"
                 android:textAllCaps="true"
+                android:textColor="@color/accent"
                 android:textSize="25sp"
-                android:textColor="@color/accent" />
+                android:textStyle="bold" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -37,103 +38,53 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colormain"
-                android:textStyle="italic"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:editable="false"
+                android:gravity="center"
                 android:hint="Searching For Your Current Location"
                 android:inputType="none"
-                android:textSize="15sp" />
+                android:textColor="@color/colormain"
+                android:textSize="15sp"
+                android:textStyle="italic" />
 
         </android.support.design.widget.TextInputLayout>
 
-
-        <LinearLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tab_moyla"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colormain">
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="7dp"
+                android:text="fariha ki ki lagbe ekhane boshao r data ami anbo database theke" />
+        </android.support.design.widget.TextInputLayout>
 
-                <TextView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:hint="Moyla-Man"
-                    android:textColorHint="@color/accent"
-                    android:drawableLeft="@drawable/logo_moyla_small"
-                    android:textSize="15sp" />
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tab_napit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colormain">
-
-                <TextView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:hint="Mr. Napit"
-                    android:textColorHint="@color/accent"
-                    android:drawableLeft="@drawable/logo_napit_small"
-                    android:textSize="15sp" />
-
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tab_dhupi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colormain">
-
-                <TextView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:hint="Dhupi"
-                    android:textColorHint="@color/accent"
-                    android:drawableLeft="@drawable/logo_dhupi_small"
-                    android:textSize="15sp" />
-
-            </android.support.design.widget.TextInputLayout>
-
-        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colormain"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textStyle="bold"
-            android:textAllCaps="true"
             android:text="News"
-            android:textSize="23sp" />
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/colormain"
+            android:textSize="23sp"
+            android:textStyle="bold" />
 
-        <ListView
-            android:layout_width="match_parent"
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/pulltorefresh"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-        </ListView>
+            <ListView
+                android:id="@+id/news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></ListView>
+        </android.support.v4.widget.SwipeRefreshLayout>
 
 
     </LinearLayout>

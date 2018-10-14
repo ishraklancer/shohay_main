@@ -59,9 +59,9 @@ public class DirtyFragment extends Fragment {
                     moilas.clear();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     User user = data.getValue(User.class);
-                    if (!user.getMoila_rate().matches("0")) {
-                        moilas.add(user);
-                    }
+//                    if (!user.getMoila_rate().matches("0")) {
+//                        moilas.add(user);
+//                    }
                 }
                 lala();
                 moilass.setAdapter(adapter);

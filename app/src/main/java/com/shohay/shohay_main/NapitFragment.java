@@ -56,9 +56,9 @@ public class NapitFragment extends Fragment {
                     napits.clear();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     User user = data.getValue(User.class);
-                    if (user.getNapit_rate().matches("0")) {
-                        napits.add(user);
-                    }
+//                    if (user.getNapit_rate().matches("0")) {
+//                        napits.add(user);
+//                    }
                 }
                 lala();
                 napitss.setAdapter(adapter);

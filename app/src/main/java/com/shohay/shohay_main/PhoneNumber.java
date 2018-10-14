@@ -44,7 +44,6 @@ public class PhoneNumber extends AppCompatActivity {
                 "TAG0", Toast.LENGTH_LONG).show();
 
 
-
         preferences = this.getApplicationContext().getSharedPreferences("phonenumber", MODE_PRIVATE);
         editor = preferences.edit();
 
@@ -60,11 +59,17 @@ public class PhoneNumber extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(),
                 "TAG2", Toast.LENGTH_LONG).show();
+        editor.putString("phonenumber", phoneInput.getText().toString());
+        editor.commit();
+        startActivity(new Intent(PhoneNumber.this, Registration.class));
 
-       verify.setOnClickListener(new View.OnClickListener() {
+        verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendVerificationCode();
+//                sendVerificationCode();
+                editor.putString("phonenumber", phoneInput.getText().toString());
+                editor.commit();
+                startActivity(new Intent(PhoneNumber.this, Registration.class));
             }
         });
 
@@ -77,18 +82,18 @@ public class PhoneNumber extends AppCompatActivity {
 
     }
 
-    private void sendVerificationCode(){
-        Log.d("ishrak","tag1");
+    private void sendVerificationCode() {
+        Log.d("ishrak", "tag1");
 
         String phone = phoneInput.getText().toString();
 
-        if(phone.isEmpty()){
+        if (phone.isEmpty()) {
             phoneInput.setError("Phone number is required");
             phoneInput.requestFocus();
             return;
         }
 
-        if(phone.length() < 14 ){
+        if (phone.length() < 14) {
             phoneInput.setError("Please enter a valid phone");
             phoneInput.requestFocus();
             return;
@@ -125,7 +130,7 @@ public class PhoneNumber extends AppCompatActivity {
         }
     };
 
-    private void verifySignInCode(){
+    private void verifySignInCode() {
         String code = codeInput.getText().toString();
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codeSent, code);
         signInWithPhoneAuthCredential(credential);

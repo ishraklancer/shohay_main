@@ -42,7 +42,7 @@ public class DhupiAdapter extends ArrayAdapter {
         gender.setText("Gender:" + user.getGender());
         address.setText("Address: " + user.getAddress());
         rating.setRating(Float.valueOf(user.getRating()));
-        rate.setText("Rate: " + user.getDhupi_rate());
+//        rate.setText("Rate: " + user.getDhupi_rate());
 
         item.setOnClickListener(new View.OnClickListener() {
             @Override

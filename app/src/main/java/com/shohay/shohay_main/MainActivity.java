@@ -10,6 +10,8 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
@@ -33,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+                            startActivity(new Intent(MainActivity.this, NavigationHome.class));
+                            finish();
+                            return;
+                        }
                         Intent intent = new Intent(getApplicationContext(), LanguageSelect.class);
                         startActivity(intent);
                         finish();

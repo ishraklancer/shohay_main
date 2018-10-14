@@ -40,7 +40,7 @@ public class napit_adapter extends ArrayAdapter {
         gender.setText("Gender:" + user.getGender());
         address.setText("Address: " + user.getAddress());
         rating.setRating(Float.valueOf(user.getRating()));
-        rate.setText("Rate: " + user.getNapit_rate());
+//        rate.setText("Rate: " + user.getNapit_rate());
 
         /// TODO: set item info
 
