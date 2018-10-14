@@ -25,6 +25,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
+                android:src="@drawable/icon_profileimg"
                 android:background="@color/black_overlay" />
 
             <Button
