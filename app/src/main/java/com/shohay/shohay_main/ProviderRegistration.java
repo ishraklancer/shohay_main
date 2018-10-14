@@ -9,22 +9,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
-import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
@@ -33,39 +31,24 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SearchView;
-import android.widget.TextView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseException;
-import com.google.firebase.FirebaseTooManyRequestsException;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
-import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageException;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 
-public class Registration extends AppCompatActivity {
+public class ProviderRegistration extends AppCompatActivity {
 
 
     final int PICK_IMAGE_REQUEST = 71;
@@ -85,11 +68,11 @@ public class Registration extends AppCompatActivity {
     //    @BindView(R.id.email)
     EditText email;
 
-    TextView serviceRegistration;
-
     Button location;
 
     Button register;
+
+
 
     private String name1;
     private String email1;
@@ -102,11 +85,20 @@ public class Registration extends AppCompatActivity {
     private int month;
     private int year;
     private double lat = -1.1, lang = -1.1;
+    Double rate;
+    String serviceType;
+
 
     FirebaseDatabase database;
     DatabaseReference myRef;
 
     Button bday;
+
+    Spinner spinner;
+
+
+    EditText etRate;
+
 
     List<Address> locations;
 
@@ -162,7 +154,7 @@ public class Registration extends AppCompatActivity {
             ref.putFile(filepath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(Registration.this, "hoyeche", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProviderRegistration.this, "hoyeche", Toast.LENGTH_LONG).show();
                 }
             });
         }
@@ -192,13 +184,11 @@ public class Registration extends AppCompatActivity {
             return;
         }
 
-        serviceRegistration = findViewById(R.id.serviceReg);
-        serviceRegistration.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Registration.this, ProviderRegistration.class));
-            }
-        });
+        spinner = (Spinner) findViewById(R.id.serviceType);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.serviceTypeArray, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
         propic = findViewById(R.id.propic);
 
@@ -226,6 +216,8 @@ public class Registration extends AppCompatActivity {
 
         email = findViewById(R.id.email);
 
+        etRate = findViewById(R.id.rate);
+
 
         preferences = this.getApplicationContext().getSharedPreferences("phonenumber", MODE_PRIVATE);
 
@@ -246,7 +238,7 @@ public class Registration extends AppCompatActivity {
                 lat = location.getLatitude();
                 lang = location.getLongitude();
                 if (lat != -1.1 && lang != -1.1) {
-                    Toast.makeText(Registration.this, "paise", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProviderRegistration.this, "paise", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -290,7 +282,7 @@ public class Registration extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final ProgressDialog progressDialog = new ProgressDialog(Registration.this);
+                final ProgressDialog progressDialog = new ProgressDialog(ProviderRegistration.this);
                 progressDialog.setTitle("Registering");
                 progressDialog.show();
 
@@ -299,10 +291,15 @@ public class Registration extends AppCompatActivity {
                 name1 = name.getText().toString();
                 email1 = email.getText().toString();
 
+                serviceType = spinner.getSelectedItem().toString();
+
+                rate = Double.parseDouble(etRate.getText().toString());
+
 
                 int id = radioSexGroup.getCheckedRadioButtonId();
                 radioSexButton = (RadioButton) findViewById(id);
                 gender1 = (String) radioSexButton.getText();
+
 
 
                 phone_number1 = preferences.getString("phonenumber", "");
@@ -312,23 +309,23 @@ public class Registration extends AppCompatActivity {
                     if (lang != -1.1 && lat != -1.1) {
                         Geocoder geocoder;
                         List<Address> addresses;
-                        geocoder = new Geocoder(Registration.this, Locale.getDefault());
+                        geocoder = new Geocoder(ProviderRegistration.this, Locale.getDefault());
                         addresses = geocoder.getFromLocation(lat, lang, 1);
                         address1 = addresses.get(0).getAddressLine(0);
 
                     } else {
-                        Toast.makeText(Registration.this, "painai :(", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ProviderRegistration.this, "painai :(", Toast.LENGTH_LONG).show();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
 
 //                User user = new User(name1, email1, phone_number1, address1, moila_rate1, gender1, dob1, rating1, dhupi_rate1, napit_rate1);
-                User user = new User(name1, email1, phone_number1, address1, lat, lang, gender1, dob, "0");
-                myRef.child(primaryKey).setValue(user);
+                ProviderClass providerClass = new ProviderClass(name1, email1, phone_number1, address1, lat, lang, gender1, dob, "0", serviceType, rate);
+                myRef.child(primaryKey).setValue(providerClass);
 
                 progressDialog.dismiss();
-                startActivity(new Intent(Registration.this, NavigationHome.class));
+                startActivity(new Intent(ProviderRegistration.this, NavigationHome.class));
                 finish();
 
             }

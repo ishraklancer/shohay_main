@@ -12,19 +12,7 @@
         android:orientation="vertical"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
-        android:paddingTop="20dp">
-
-        <Button
-            android:id="@+id/serviceReg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colormain"
-            android:text="Are you a service provider?"
-            android:textStyle="bold|italic"
-            android:textColor="@color/colorWhite"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
-            />
+        android:paddingTop="56dp">
 
 
         <LinearLayout
@@ -133,6 +121,34 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="Press To Select Your BirthDate" />
+
+        <TextView
+            android:id="@+id/prompt"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Service Type"
+            />
+
+
+
+        <Spinner
+            android:id="@+id/serviceType"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/rate"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rate: Tk/Time"
+            />
 
 
         <!-- Signup Button -->

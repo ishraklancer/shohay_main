@@ -64,7 +64,9 @@
         <activity android:name=".About" />
         <activity
             android:name=".EasterEgg"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".ProviderRegistration" />
+        <activity android:name=".ProviderNavigationHome"></activity>
     </application>
 
 </manifest>
