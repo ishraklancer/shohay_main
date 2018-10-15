@@ -65,7 +65,7 @@ import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 
-public class Registration extends AppCompatActivity {
+public class Registration extends AppCompatActivity implements LocationListener {
 
 
     final int PICK_IMAGE_REQUEST = 71;
@@ -266,7 +266,7 @@ public class Registration extends AppCompatActivity {
             }
         };
 
-        lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 10, locationListener);
+        lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 10, this);
 
         location.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -338,4 +338,23 @@ public class Registration extends AppCompatActivity {
     SharedPreferences preferences;
 
 
+    @Override
+    public void onLocationChanged(Location location) {
+
+    }
+
+    @Override
+    public void onStatusChanged(String s, int i, Bundle bundle) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String s) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String s) {
+
+    }
 }
