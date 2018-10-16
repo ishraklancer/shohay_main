@@ -21,14 +21,17 @@
             android:layout_gravity="center"
             android:src="@drawable/icon_order" />
 
+
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_toRightOf="@id/order_icon"
             android:gravity="center"
+            android:background="@color/colormain"
+            android:textColor="@color/accent"
             android:text="PENDING ORDERS"
-            android:textColor="@color/colormainDark"
-            android:textSize="30dp"
+            android:textSize="25sp"
             android:textStyle="bold|italic" />
 
 

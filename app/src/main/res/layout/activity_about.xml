@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".About">
+    tools:context=".About"
+    android:background="@drawable/back5">
 
     <ImageView
         android:layout_width="match_parent"
@@ -37,7 +38,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="ShalahuddinShanto"
+                android:text="Shalahuddin Shanto"
                 android:textSize="20dp"
                 android:textColor="@color/colormain"
                 android:gravity="center"
@@ -63,7 +64,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="ShadmanIshrak"
+                android:text="Shadman Ishrak"
                 android:textColor="@color/colormain"
                 android:textSize="20dp"
                 android:gravity="center"
@@ -89,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="FarihaRaisa"
+                android:text="Fariha Raisa"
                 android:textSize="20dp"
                 android:textColor="@color/colormain"
                 android:gravity="center"
