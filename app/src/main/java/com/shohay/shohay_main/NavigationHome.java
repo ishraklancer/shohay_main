@@ -32,9 +32,8 @@ public class NavigationHome extends AppCompatActivity
         setContentView(R.layout.activity_navigation_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        startService(new Intent(NavigationHome.this, NotificationService.class));
         preferences = this.getApplicationContext().getSharedPreferences("phonenumber", MODE_PRIVATE);
-
-
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -61,7 +60,7 @@ public class NavigationHome extends AppCompatActivity
         head_phone = lala.findViewById(R.id.head_phoneNumber);
 
         head_phone.setText(preferences.getString("phonenumber", ""));
-        head_name.setText("alauddin");
+        head_name.setText(preferences.getString("name",""));
 
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();

@@ -4,57 +4,101 @@ import android.widget.RatingBar;
 
 public class Order {
 
-    private String serv_pro, email, order_id, rating, type, order_timestamp, payment, status, delivery_timestamp;
+    private String userName, userNumber, providerName, providerNumber, providerRate, providerRating, startHour, finishHour, workDate, status = "pending";
 
-    public Order(String serv_pro, String order_id, String rating, String type, String order_timestamp, String payment, String status, String delivery_timestamp) {
-        this.order_id = order_id;
-        this.serv_pro = serv_pro;
-        this.email = email;
-        this.rating = rating;
-        this.type = type;
-        this.order_timestamp = order_timestamp;
-        this.payment = payment;
+    public Order(String userName, String userNumber, String providerName, String providerNumber, String providerRate, String providerRating, String startHour, String finishHour, String workDate, String status) {
+        this.userName = userName;
+        this.userNumber = userNumber;
+        this.providerName = providerName;
+        this.providerNumber = providerNumber;
+        this.providerRate = providerRate;
+        this.providerRating = providerRating;
+        this.startHour = startHour;
+        this.finishHour = finishHour;
+        this.workDate = workDate;
         this.status = status;
-        this.delivery_timestamp = delivery_timestamp;
     }
 
     public Order() {
-
     }
 
-    public String getServ_pro() {
-        return serv_pro;
+    public String getUserName() {
+        return userName;
     }
 
-    public String getEmail() {
-        return email;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getOrder_id() {
-        return order_id;
+    public String getUserNumber() {
+        return userNumber;
     }
 
-    public String getRating() {
-        return rating;
+    public void setUserNumber(String userNumber) {
+        this.userNumber = userNumber;
     }
 
-    public String getType() {
-        return type;
+    public String getProviderName() {
+        return providerName;
     }
 
-    public String getOrder_timestamp() {
-        return order_timestamp;
+    public void setProviderName(String providerName) {
+        this.providerName = providerName;
     }
 
-    public String getPayment() {
-        return payment;
+    public String getProviderNumber() {
+        return providerNumber;
+    }
+
+    public void setProviderNumber(String providerNumber) {
+        this.providerNumber = providerNumber;
+    }
+
+    public String getProviderRate() {
+        return providerRate;
+    }
+
+    public void setProviderRate(String providerRate) {
+        this.providerRate = providerRate;
+    }
+
+    public String getProviderRating() {
+        return providerRating;
+    }
+
+    public void setProviderRating(String providerRating) {
+        this.providerRating = providerRating;
+    }
+
+    public String getStartHour() {
+        return startHour;
+    }
+
+    public void setStartHour(String startHour) {
+        this.startHour = startHour;
+    }
+
+    public String getFinishHour() {
+        return finishHour;
+    }
+
+    public void setFinishHour(String finishHour) {
+        this.finishHour = finishHour;
+    }
+
+    public String getWorkDate() {
+        return workDate;
+    }
+
+    public void setWorkDate(String workDate) {
+        this.workDate = workDate;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public String getDelivery_timestamp() {
-        return delivery_timestamp;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

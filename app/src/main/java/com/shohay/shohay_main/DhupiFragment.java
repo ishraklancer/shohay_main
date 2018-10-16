@@ -47,7 +47,7 @@ public class DhupiFragment extends Fragment {
     @Override
     public View onCreateView
             (LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+             Bundle savedInstanceState) {
 
         //hides action title bar
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
@@ -65,7 +65,7 @@ public class DhupiFragment extends Fragment {
 
         dhupiss = thisFragment.findViewById(R.id.dhupis);
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference("providers");
+        reference = database.getReference("providers").child("Dhupi");
 
 //        dhupiss.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
@@ -80,13 +80,13 @@ public class DhupiFragment extends Fragment {
                 if (dhupis.size() != 0)
                     dhupis.clear();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
-//                    User user = data.getValue(User.class);
-////                    if (!user.getDhupi_rate().matches("0")) {
-//                    dhupis.add(user);
-////                    }
+
+                    ProviderClass temp = data.getValue(ProviderClass.class);
+                    dhupis.add(temp);
                 }
                 lala();
                 dhupiss.setAdapter(adapter);
+                Toast.makeText(getActivity(), "" + dhupis.size(), Toast.LENGTH_SHORT).show();
 
             }
 

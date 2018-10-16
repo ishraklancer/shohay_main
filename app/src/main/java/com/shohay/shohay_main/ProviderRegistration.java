@@ -301,6 +301,9 @@ public class ProviderRegistration extends AppCompatActivity {
 
 
                 phone_number1 = preferences.getString("phonenumber", "");
+                preferences.edit().putString("serviceType", serviceType).commit();
+                preferences.edit().putString("name", name1).commit();
+
 
                 String primaryKey = myRef.push().getKey();
                 try {
@@ -319,8 +322,10 @@ public class ProviderRegistration extends AppCompatActivity {
                 }
 
 //                User user = new User(name1, email1, phone_number1, address1, moila_rate1, gender1, dob1, rating1, dhupi_rate1, napit_rate1);
+
                 ProviderClass providerClass = new ProviderClass(name1, email1, phone_number1, "", gender1, dob, "0", serviceType, rate);
-                myRef.child(primaryKey).setValue(providerClass);
+                myRef = myRef.child(serviceType);
+                myRef.child(phone_number1).setValue(providerClass);
 
                 //TODO: MAKE PHONE_NUMBER PRIMARY KEY OR ELSE MULTIPLE USERS SAME NUMBER
 

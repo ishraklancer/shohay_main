@@ -49,7 +49,6 @@ public class DhupiAdapter extends ArrayAdapter {
     }
 
 
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -67,12 +66,9 @@ public class DhupiAdapter extends ArrayAdapter {
         Toast.makeText(this.getContext(), "phonnumber", Toast.LENGTH_SHORT).show();
 
 
-
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("users");
-
-
 
 
         myRef.addValueEventListener(new ValueEventListener() {
@@ -98,15 +94,32 @@ public class DhupiAdapter extends ArrayAdapter {
         rate.setText("Rate: " + user.getRate());
 
 
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot dd : dataSnapshot.getChildren()) {
+                    ProviderClass ll = dd.getValue(ProviderClass.class);
+                    if (ll.getPhone_number().equals(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber())) {
+                        userName = ll.getName();
+                        userNumber = ll.getPhone_number();
+                        break;
+                    }
+                }
+            }
 
-        userName = user1.getName();
-        userNumber = user1.getPhone_number();
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
         providerName = user.getName();
         providerRating = user.getRating();
         providerGender = user.getGender();
         providerRate = user.getRate();
-
-
+        providerNumber = user.getPhone_number();
 
 
         item.setOnClickListener(new View.OnClickListener() {
@@ -118,7 +131,8 @@ public class DhupiAdapter extends ArrayAdapter {
                 intent.putExtra("userNumber", userNumber);
                 intent.putExtra("providerName", providerName);
                 intent.putExtra("providerRating", providerRating);
-                intent.putExtra("providerRate", providerRate);
+                intent.putExtra("providerRate", String.valueOf(providerRate));
+                intent.putExtra("providerNumber", providerNumber);
 
 
                 context.startActivity(intent);
@@ -130,3 +144,5 @@ public class DhupiAdapter extends ArrayAdapter {
         return item;
     }
 }
+
+/// service provider dhupi esb dekhbena notification fragment baad

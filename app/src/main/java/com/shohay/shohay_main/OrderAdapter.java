@@ -36,11 +36,11 @@ public class OrderAdapter extends ArrayAdapter {
 
         Order order = orderlist.get(position);
 
-        serv_pro.setText("You Have Taken Service From " + order.getServ_pro());
-        pldate.setText("Order Placed Date: " + order.getOrder_timestamp());
-        comdate.setText("Complete Date: " + order.getDelivery_timestamp());
-        status.setText("Status: " + order.getStatus());
-        taka.setText("Contracted Money: " + order.getPayment());
+//        serv_pro.setText("You Have Taken Service From " + order.getServ_pro());
+//        pldate.setText("Order Placed Date: " + order.getOrder_timestamp());
+//        comdate.setText("Complete Date: " + order.getDelivery_timestamp());
+//        status.setText("Status: " + order.getStatus());
+//        taka.setText("Contracted Money: " + order.getPayment());
 
         /// TODO: set item info
 

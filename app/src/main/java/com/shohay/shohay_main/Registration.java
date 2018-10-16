@@ -229,6 +229,7 @@ public class Registration extends AppCompatActivity implements LocationListener 
 
 
         preferences = this.getApplicationContext().getSharedPreferences("phonenumber", MODE_PRIVATE);
+        preferences.edit().putString("name", name1).commit();
 
         location = findViewById(R.id.getloc);
         bday = findViewById(R.id.bday);
@@ -326,7 +327,7 @@ public class Registration extends AppCompatActivity implements LocationListener 
 
 //                User user = new User(name1, email1, phone_number1, address1, moila_rate1, gender1, dob1, rating1, dhupi_rate1, napit_rate1);
                 User user = new User(name1, email1, phone_number1, "", gender1, dob, "0");
-                myRef.child(primaryKey).setValue(user);
+                myRef.child(phone_number1).setValue(user);
 
                 //TODO: MAKE PHONE_NUMBER PRIMARY KEY OR ELSE MULTIPLE USERS SAME NUMBER
 
