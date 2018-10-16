@@ -5,27 +5,11 @@ public class ProviderClass {
     private String email;
     private String phone_number;
     private String address;
-    private Double latitude;
-    private Double longitude;
     private String gender;
     private String dob;
     private String rating;
     private String serviceType;
     private Double rate;
-
-    public ProviderClass(String name, String email, String phone_number, String address, Double latitude, Double longitude, String gender, String dob, String rating, String serviceType, Double rate) {
-        this.name = name;
-        this.email = email;
-        this.phone_number = phone_number;
-        this.address = address;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.gender = gender;
-        this.dob = dob;
-        this.rating = rating;
-        this.serviceType = serviceType;
-        this.rate = rate;
-    }
 
     public String getName() {
         return name;
@@ -35,8 +19,12 @@ public class ProviderClass {
         this.name = name;
     }
 
+    public ProviderClass() {
+    }
+
     public String getEmail() {
         return email;
+
     }
 
     public void setEmail(String email) {
@@ -57,22 +45,6 @@ public class ProviderClass {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public Double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
-
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
     }
 
     public String getGender() {
@@ -112,6 +84,18 @@ public class ProviderClass {
     }
 
     public void setRate(Double rate) {
+        this.rate = rate;
+    }
+
+    public ProviderClass(String name, String email, String phone_number, String address, String gender, String dob, String rating, String serviceType, Double rate) {
+        this.name = name;
+        this.email = email;
+        this.phone_number = phone_number;
+        this.address = address;
+        this.gender = gender;
+        this.dob = dob;
+        this.rating = rating;
+        this.serviceType = serviceType;
         this.rate = rate;
     }
 }

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
+    android:background="@drawable/back2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -22,7 +22,7 @@
         android:layout_toLeftOf="@id/progress"
         android:text="SH"
         android:textSize="60sp"
-        android:textColor="@color/colormain"
+        android:textColor="@color/colorWhite"
         android:textStyle="bold|italic" />
 
     <TextView
@@ -32,32 +32,9 @@
         android:layout_centerInParent="true"
         android:layout_toRightOf="@id/progress"
         android:text="HAY"
-        android:textColor="@color/colormain"
+        android:textColor="@color/colorWhite"
         android:textSize="60sp"
         android:textStyle="bold|italic" />
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@id/progress"
-        android:src="@drawable/logo_napit"
-        android:id="@+id/napit"/>
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/logo_dhupi"
-        android:layout_centerVertical="true"
-        android:layout_above="@id/progress"
-        />
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentRight="true"
-        android:layout_above="@id/progress"
-        android:src="@drawable/logo_moyla" />
 
     <ImageView
         android:id="@+id/tick"

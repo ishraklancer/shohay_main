@@ -73,7 +73,6 @@ public class ProviderRegistration extends AppCompatActivity {
     Button register;
 
 
-
     private String name1;
     private String email1;
     private String phone_number1;
@@ -177,18 +176,18 @@ public class ProviderRegistration extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_provider_registration);
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST);
             return;
         }
 
-        spinner = (Spinner) findViewById(R.id.serviceType);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.serviceTypeArray, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        spinner = findViewById(R.id.serviceType);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//                R.array.serviceTypeArray, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner.setAdapter(adapter);
 
         propic = findViewById(R.id.propic);
 
@@ -271,7 +270,7 @@ public class ProviderRegistration extends AppCompatActivity {
         name = findViewById(R.id.name);
 
         database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("users");
+        myRef = database.getReference("providers");
 
         register = findViewById(R.id.signup);
         radioSexGroup = findViewById(R.id.gender);
@@ -301,7 +300,6 @@ public class ProviderRegistration extends AppCompatActivity {
                 gender1 = (String) radioSexButton.getText();
 
 
-
                 phone_number1 = preferences.getString("phonenumber", "");
 
                 String primaryKey = myRef.push().getKey();
@@ -321,8 +319,11 @@ public class ProviderRegistration extends AppCompatActivity {
                 }
 
 //                User user = new User(name1, email1, phone_number1, address1, moila_rate1, gender1, dob1, rating1, dhupi_rate1, napit_rate1);
-                ProviderClass providerClass = new ProviderClass(name1, email1, phone_number1, address1, lat, lang, gender1, dob, "0", serviceType, rate);
+                ProviderClass providerClass = new ProviderClass(name1, email1, phone_number1, "", gender1, dob, "0", serviceType, rate);
                 myRef.child(primaryKey).setValue(providerClass);
+
+                //TODO: MAKE PHONE_NUMBER PRIMARY KEY OR ELSE MULTIPLE USERS SAME NUMBER
+
 
                 progressDialog.dismiss();
                 startActivity(new Intent(ProviderRegistration.this, NavigationHome.class));

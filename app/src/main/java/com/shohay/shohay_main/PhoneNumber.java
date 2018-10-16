@@ -59,17 +59,14 @@ public class PhoneNumber extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(),
                 "TAG2", Toast.LENGTH_LONG).show();
-        editor.putString("phonenumber", phoneInput.getText().toString());
-        editor.commit();
-        startActivity(new Intent(PhoneNumber.this, Registration.class));
+//        editor.putString("phonenumber", phoneInput.getText().toString());
+//        editor.commit();
+//        startActivity(new Intent(PhoneNumber.this, Registration.class));
 
         verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                sendVerificationCode();
-                editor.putString("phonenumber", phoneInput.getText().toString());
-                editor.commit();
-                startActivity(new Intent(PhoneNumber.this, Registration.class));
+                sendVerificationCode();
             }
         });
 

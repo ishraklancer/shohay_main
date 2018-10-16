@@ -18,13 +18,12 @@
             android:id="@+id/serviceReg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colormain"
-            android:text="Are you a service provider?"
-            android:textStyle="bold|italic"
-            android:textColor="@color/colorWhite"
             android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/colormain"
             android:gravity="center"
-            />
+            android:text="Are you a service provider?"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold|italic" />
 
 
         <LinearLayout
@@ -37,8 +36,8 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:src="@drawable/icon_profileimg"
-                android:background="@color/black_overlay" />
+                android:background="@color/black_overlay"
+                android:src="@drawable/icon_profileimg" />
 
             <Button
                 android:id="@+id/choose"
@@ -123,7 +122,8 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Get Your Location" />
+            android:text="Get Your Location"
+            android:visibility="gone" />
 
 
         <Button

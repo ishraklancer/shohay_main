@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                             finish();
                             return;
                         }
-                        Intent intent = new Intent(getApplicationContext(), LanguageSelect.class);
+                        Intent intent = new Intent(MainActivity.this, LanguageSelect.class);
                         startActivity(intent);
                         finish();
                     }

@@ -85,7 +85,7 @@ public class Registration extends AppCompatActivity implements LocationListener 
     //    @BindView(R.id.email)
     EditText email;
 
-    TextView serviceRegistration;
+    Button serviceRegistration;
 
     Button location;
 
@@ -197,6 +197,7 @@ public class Registration extends AppCompatActivity implements LocationListener 
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Registration.this, ProviderRegistration.class));
+                finish();
             }
         });
 
@@ -324,8 +325,10 @@ public class Registration extends AppCompatActivity implements LocationListener 
                 }
 
 //                User user = new User(name1, email1, phone_number1, address1, moila_rate1, gender1, dob1, rating1, dhupi_rate1, napit_rate1);
-                User user = new User(name1, email1, phone_number1, address1, lat, lang, gender1, dob, "0");
+                User user = new User(name1, email1, phone_number1, "", gender1, dob, "0");
                 myRef.child(primaryKey).setValue(user);
+
+                //TODO: MAKE PHONE_NUMBER PRIMARY KEY OR ELSE MULTIPLE USERS SAME NUMBER
 
                 progressDialog.dismiss();
                 startActivity(new Intent(Registration.this, NavigationHome.class));

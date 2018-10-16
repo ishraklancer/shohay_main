@@ -6,9 +6,17 @@ public class User {
     private String email;
     private String phone_number;
     private String address;
-    private Double latitude;
+
+
+    private String gender;
+    private String dob;
+    private String rating;
+
+    public User() {
+    }
 
     public String getName() {
+
         return name;
     }
 
@@ -40,22 +48,6 @@ public class User {
         this.address = address;
     }
 
-    public Double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
-
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
-
     public String getGender() {
         return gender;
     }
@@ -80,23 +72,13 @@ public class User {
         this.rating = rating;
     }
 
-    public User(String name, String email, String phone_number, String address, Double latitude, Double longitude, String gender, String dob, String rating) {
+    public User(String name, String email, String phone_number, String address, String gender, String dob, String rating) {
         this.name = name;
         this.email = email;
         this.phone_number = phone_number;
         this.address = address;
-        this.latitude = latitude;
-        this.longitude = longitude;
-
         this.gender = gender;
         this.dob = dob;
         this.rating = rating;
     }
-
-    private Double longitude;
-    private String gender;
-    private String dob;
-    private String rating;
-
-
 }

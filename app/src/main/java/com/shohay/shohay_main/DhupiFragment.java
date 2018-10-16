@@ -36,7 +36,7 @@ public class DhupiFragment extends Fragment {
 
     Activity context;
     DhupiAdapter adapter;
-    List<User> dhupis = new ArrayList<>();
+    List<ProviderClass> dhupis = new ArrayList<>();
 
     ListView dhupiss;
     FirebaseDatabase database;
@@ -65,7 +65,7 @@ public class DhupiFragment extends Fragment {
 
         dhupiss = thisFragment.findViewById(R.id.dhupis);
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference("users");
+        reference = database.getReference("providers");
 
 //        dhupiss.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override

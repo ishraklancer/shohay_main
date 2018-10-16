@@ -25,8 +25,8 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:src="@drawable/icon_profileimg"
-                android:background="@color/black_overlay" />
+                android:background="@color/black_overlay"
+                android:src="@drawable/icon_profileimg" />
 
             <Button
                 android:id="@+id/choose"
@@ -111,7 +111,8 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Get Your Location" />
+            android:text="Get Your Location"
+            android:visibility="gone" />
 
 
         <Button
@@ -124,31 +125,28 @@
 
         <TextView
             android:id="@+id/prompt"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Select Service Type"
-            />
-
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Select Service Type" />
 
 
         <Spinner
             android:id="@+id/serviceType"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:entries="@array/serviceTypeArray" />
 
         <EditText
             android:id="@+id/rate"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Rate: Tk/Time"
-            />
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="Rate: Tk/Time" />
 
 
         <!-- Signup Button -->
