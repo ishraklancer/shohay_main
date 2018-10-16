@@ -14,11 +14,16 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colormainDark"
-            android:text="Dhupi's Nearby You: "
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:background="@color/colormain"
+            android:gravity="center"
+            android:text="Laundrymen Nearby :"
             android:textAlignment="center"
-            android:textSize="25dp" />
+            android:textAllCaps="true"
+            android:textColor="@color/accent"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
         <!--android:layout_width="match_parent"-->

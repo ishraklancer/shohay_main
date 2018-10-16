@@ -1,58 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back3"
+    android:descendantFocusability="beforeDescendants"
+    android:focusable="false"
     android:orientation="vertical"
     android:paddingTop="10sp">
 
-
-    <TextView
-        android:id="@+id/napit_name"
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name: "
-        android:textSize="25dp" />
+        android:layout_margin="16dp">
 
-    <TextView
-        android:id="@+id/napit_add"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Home Address: "
-        android:textSize="25dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/napit_gender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Gender: "
-        android:textSize="25dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:background="@color/monsoon" />
+
+                <TextView
+                    android:id="@+id/napit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1000000000"
+                    android:text="Name:"
+                    android:textSize="25dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/napit_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Home Address: "
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/napit_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gender: "
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/napit_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rate: "
+                android:textSize="25dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rating: "
+                android:textSize="25dp" />
 
 
-    <TextView
-        android:id="@+id/napit_rate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rate: "
-        android:textSize="25dp" />
+            <RatingBar
+                android:id="@+id/napit_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="false"
+                android:contextClickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:isIndicator="true"
+                android:longClickable="false"
+                android:max="5"
+                android:numStars="5"
+                android:textAlignment="center" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rating: "
-        android:textSize="25dp" />
 
-    <RatingBar
-        android:id="@+id/napit_rating"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="false"
-        android:contextClickable="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:isIndicator="false"
-        android:longClickable="false"
-        android:max="5"
-        android:numStars="5" />
-
-</LinearLayout>
-
+</RelativeLayout>
